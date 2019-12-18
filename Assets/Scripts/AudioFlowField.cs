@@ -103,5 +103,8 @@ public class AudioFlowField : MonoBehaviour
                 }
             }
         }
+
+        noiseFlowfield.cube.transform.Rotate(new Vector3(0, audioPeer.audioBandBuffer[0], 0));
+        noiseFlowfield.transform.Rotate(new Vector3(0, audioPeer.audioBandBuffer[0], 0));
     }
 }

@@ -20,6 +20,10 @@ public class NoiseFlowField : MonoBehaviour
     public float particleScale, particleMoveSpeed, particleRotSpeed;
     public float spawnRadius;
 
+    public Material BigCubeMaterial;
+
+    public GameObject cube;
+
     bool particleSpawnValidadtion(Vector3 position)
     {
         bool valid = true;
@@ -45,6 +49,8 @@ public class NoiseFlowField : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        DrawCube();
+        
         flowfieldDirection = new Vector3[gridSize.x, gridSize.y, gridSize.z];
         fn = new FastNoise();
         particles = new List<FlowfieldParticle>();
@@ -162,5 +168,15 @@ public class NoiseFlowField : MonoBehaviour
         Gizmos.DrawWireCube(this.transform.position + new Vector3((gridSize.x * cellSize) * 0.5f, 
             (gridSize.y * cellSize) * 0.5f, (gridSize.z * cellSize) * 0.5f),
             new Vector3(gridSize.x * cellSize, gridSize.y * cellSize, gridSize.z * cellSize));
+    }
+
+    private void DrawCube()
+    {
+        cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.position = this.transform.position + new Vector3((gridSize.x * cellSize) * 0.5f,
+            (gridSize.y * cellSize) * 0.5f, (gridSize.z * cellSize) * 0.5f);
+        cube.transform.localScale = new Vector3((gridSize.x * cellSize) + 10, (gridSize.y * cellSize) + 10, (gridSize.z * cellSize) + 10);
+        cube.GetComponent<Renderer>().material = BigCubeMaterial;
+        cube.GetComponent<Collider>().enabled = false;
     }
 }

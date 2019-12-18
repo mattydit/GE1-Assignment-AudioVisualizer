@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75, y: 46.5, z: -105.6}
+  m_LocalPosition: {x: 54.3, y: 51.6, z: -135.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -347,8 +347,9 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 57e9589a29a46254d9b18e393f87c8a9, type: 3}
   useMicrophone: 0
   selectedDevice: 
-  mixerGroupMic: {fileID: 0}
-  mixerGroupMaster: {fileID: 0}
+  mixerGroupMic: {fileID: 3455598089666021592, guid: fa22e97185a89414abd564aa274b63d6,
+    type: 2}
+  mixerGroupMaster: {fileID: 24300002, guid: fa22e97185a89414abd564aa274b63d6, type: 2}
 --- !u!82 &1013143943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -574,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b97239a2d87e44f819bc379633556f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 15, y: 10, z: 10}
+  gridSize: {x: 10, y: 10, z: 10}
   cellSize: 10
   increment: 20
   offset: {x: 0, y: 0, z: 0}
@@ -588,6 +589,8 @@ MonoBehaviour:
   particleMoveSpeed: 10
   particleRotSpeed: 100
   spawnRadius: 2
+  BigCubeMaterial: {fileID: 2100000, guid: ace84548b986f9447bb22177501570d0, type: 2}
+  cube: {fileID: 0}
 --- !u!4 &1496901580
 Transform:
   m_ObjectHideFlags: 0
