@@ -80,28 +80,25 @@ public class AudioFlowField : MonoBehaviour
 
         for (int i = 0; i < 8; i++)
         {
-            if(useColour1)
+        
+            if(audioPeer.audioBandBuffer[i] > colourThreshold1)
             {
-                if(audioPeer.audioBandBuffer[i] > colourThreshold1)
-                {
-                    audioMat[i].SetColor(colourName1, colour1[i] * audioPeer.audioBandBuffer[i] * colourMultiplier1);
-                }
-                else
-                {
-                    audioMat[i].SetColor(colourName1, colour1[i] * 0f);
-                }
+                audioMat[i].SetColor(colourName1, colour1[i] * audioPeer.audioBandBuffer[i] * colourMultiplier1);
             }
-            if(useColour2)
+            else
             {
-                if (audioPeer.audioBand[i] > colourThreshold2)
-                {
-                    audioMat[i].SetColor(colourName2, colour2[i] * audioPeer.audioBand[i] * colourMultiplier2);
-                }
-                else
-                {
-                    audioMat[i].SetColor(colourName2, colour2[i] * 0f);
-                }
+                audioMat[i].SetColor(colourName1, colour1[i] * 0f);
             }
+            
+            if (audioPeer.audioBand[i] > colourThreshold2)
+            {
+                audioMat[i].SetColor(colourName2, colour2[i] * audioPeer.audioBand[i] * colourMultiplier2);
+            }
+            else
+            {
+                audioMat[i].SetColor(colourName2, colour2[i] * 0f);
+            }
+            
         }
 
         noiseFlowfield.cube.transform.Rotate(new Vector3(0, audioPeer.audioBandBuffer[0], 0));
